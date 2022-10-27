@@ -10,17 +10,17 @@ class Usuario {
         return (`Su nombre completo es: ${this.nombre} ${this.apellido}`);
     }
     addMascota(nombreMascota){
-    (this.mascotas.push(nombreMascota))
+    this.mascotas.push(nombreMascota)
     }
     countMascotas(){
         return(`las mascotas de ${this.nombre} son : ${this.mascotas.length}`);
     }
     addBook(nombreLibro, autorLibro){
-(this.libros.push({nombreLibro, autorLibro}))   
+this.libros.push({nombreLibro, autorLibro}) 
 }
     getBookNames(){
 const mapNombreLibros = this.libros.map(libro => libro.nombreLibro) 
-return console.log(mapNombreLibros);;
+return(mapNombreLibros);;
     }
 }
 
@@ -33,6 +33,5 @@ prueba.addMascota("duque")
 console.log(prueba.countMascotas());
 prueba.addBook( "los Cazaventura", "Susana Olaondo")
 prueba.addBook( "El sapo Ruperto", "Roy Berocay")
-
-prueba.getBookNames();
+console.log(prueba.getBookNames());
 
