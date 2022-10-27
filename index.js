@@ -7,19 +7,31 @@ class Usuario {
     }
 
     getFullName(){
-        console.log(`Su nombre completo es: ${this.nombre} ${this.apellido}`);
+        return (`Su nombre completo es: ${this.nombre} ${this.apellido}`);
     }
     addMascota(nombreMascota){
-        this.mascotas.push(nombreMascota)
+        return(this.mascotas.push(nombreMascota))
     }
     countMascotas(){
-        console.log(`las mascotas de ${this.nombre}: son ${this.mascotas.lenght}`);
+        return(`las mascotas de ${this.nombre} son : ${this.mascotas.length}`);
     }
     addBook(nombreLibro, autorLibro){
-        this.libros.push([{nombre: nombreLibro, autor: autorLibro}]);
-    }
+return(this.libros.push({nombreLibro, autorLibro}))   
+}
     getBookNames(){
-        return this.libros.map((libros) => libros.nombre)
+const mapNombreLibros = this.libros.map(libro => libro.nombreLibro) 
+console.log(`${this.nombre} ${this.apellido} posee estos libros en su biblioteca ${mapNombreLibros}`);
     }
 }
+
+const prueba = new Usuario("Nahuel", "Berrutti", [], [])
+console.log(prueba.getFullName());
+prueba.addMascota("lucy")
+prueba.addMascota("max")
+prueba.addMascota("morita")
+prueba.addMascota("duque")
+console.log(prueba.countMascotas());
+prueba.addBook("El sapo ruperto", "Roy berocay")
+prueba.addBook("Los cazaventura", "Susana Olaondo")
+prueba.getBookNames()
 
